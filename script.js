@@ -181,10 +181,7 @@ clear.addEventListener("click", function () {
 
 
 const options1 = {
-    weekday: "short",  // Wed
-    //   month: "short",    // Jul
-    //   day: "2-digit",    // 28
-    //   year: "numeric"    // 2025
+    weekday: "short",
 };
 
 const options2 = {
