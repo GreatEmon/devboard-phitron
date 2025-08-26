@@ -205,7 +205,7 @@ theme.addEventListener("click", function () {
     bg.style.backgroundColor = color;
 })
 
-blog.addEventListener("click", function(){
+blog.addEventListener("click", function () {
     window.location.href = "./blog.html";
 })
 
