@@ -1,0 +1,38 @@
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: rgb(247, 250, 255);
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+}
+
+.shadow-soft {
+    box-shadow: 0 10px 30px rgba(10, 53, 132, 0.08);
+}
+
+.shadow-pill {
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.04) inset, 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: rgb(var(--accent));
+    display: inline-block;
+}
+
+.pill-bg{
+    background-color: #F4F7FF;
+}
+.grad{
+    background: linear-gradient(45deg,#3752FD, #6C7FFA, #9BA8F8);
+}

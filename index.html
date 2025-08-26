@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBoard</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="min-h-full" id="bgCol">
+    <!-- Page container -->
+    <div class="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Top Bar -->
+        <header
+            class=" border border-slate-100 rounded-2xl px-4 sm:px-6 py-4 flex items-center justify-between bg-white">
+            <!-- Left: Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 grid place-items-center">
+                    <img src="./assets/logo.png" alt="">
+                </div>
+                <span class="text-2xl tracking-tight text-slate-800">Dev<span
+                        class="text-black-600 font-bold">Board</span></span>
+            </div>
+            <!-- Right: Score & palette -->
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 pill-bg border border-slate-100 rounded-full px-3 py-1 shadow-pill">
+                    <div class="w-6 h-6 rounded-full grid place-items-center">
+                        <img src="./assets/checkbox.png" alt="">
+                        </svg>
+                    </div>
+                    <span class="font-bold tracking-wide text-xl" id="upcount">23</span>
+                </div>
+                <div
+                    class="w-10 h-10 rounded-full grid place-items-center pill-bg border border-slate-100 shadow-pill cursor-pointer" id="theme">
+                    <!-- palette icon -->
+                    <img src="./assets/theme-btn.png" alt="">
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="my-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <!-- Left + Center -->
+            <section class="lg:col-span-9 space-y-6 bg-white p-6 rounded-2xl">
+                <!-- Stats Row -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Tasks Assigned -->
+                    <div class="glass rounded-2xl border border-slate-100  p-5 flex items-center gap-4 pill-bg">
+                        <div
+                            class="w-14 h-14 rounded-full grid place-items-center grid place-items-center bg-white border border-slate-100 shadow-pill p-2">
+                            <img src="./assets/checkbox.png" alt="" class="w-[24px]">
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium">Task Assigned</p>
+                            <p class="text-3xl font-bold tracking-tight" id="taskAssigned">06</p>
+                        </div>
+                    </div>
+
+                    <!-- Discover Banner -->
+                    <div class="col-span-2">
+                        <div
+                            class="rounded-2xl border border-slate-100 overflow-hidden grad text-white p-5 h-full flex items-center justify-between cursor-pointer" id="blog">
+                            <div class="flex items-center gap-4">
+                                <div class="rounded-xl">
+                                    <!-- calendar icon -->
+                                    <img src="./assets/board.png" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-lg md:text-xl font-medium">Discover Something</p>
+                                    <p class="text-lg md:text-xl font-medium">New Today!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-2xl border border-slate-100  p-6 pill-bg flex items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-14 h-14 rounded-full bg-white grid place-items-center">
+                                <img src="./assets/calender.png" alt="" class="w-[24px]">
+                            </div>
+                            <div>
+                                <p class="text-slate-600" id = "day"></p>
+                                <p class="text-slate-900 font-bold -mt-1" id="dat"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-9">
+                    <!-- Task Card 1 -->
+                    <article class="glass rounded-2xl border border-slate-100 p-5 pill-bg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-base text-slate-700 px-4 py-2 rounded-lg bg-white">ShopEase</span>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg my-2">Fix Mobile Button Issue</h3>
+                        <p class="text-sm text-slate-500 mt-3 bg-white border border-slate-100 rounded-xl p-3">Debug
+                            using Chrome DevTools, check for overlapping elements and CSS conflicts.</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-500">Deadline</p>
+                                <p class="text-sm font-semibold text-slate-700">21 March 2025</p>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold "
+                                value="Fix Mobile Button Issue" id="card1">Completed</button>
+                        </div>
+                    </article>
+
+                    <!-- Task Card 2 -->
+                    <article class="glass rounded-2xl border border-slate-100 p-5 pill-bg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-base text-slate-700 px-4 py-2 rounded-lg bg-white">CloudSync</span>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Add Dark Mode</h3>
+                        <p class="text-sm text-slate-500 mt-3 bg-white border border-slate-100 rounded-xl p-3">Store the
+                            user's preference in localStorage, update CSS variables and toggle class on root.</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-500">Deadline</p>
+                                <p class="text-sm font-semibold text-slate-700">21 March 2025</p>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold" id="card2"
+                                value="Add Dark Mode">Completed</button>
+                        </div>
+                    </article>
+
+                    <!-- Task Card 3 -->
+                    <article class="glass rounded-2xl border border-slate-100 p-5 pill-bg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-base text-slate-700 px-4 py-2 rounded-lg bg-white">SwiftPay</span>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Optimize Home page</h3>
+                        <p class="text-sm text-slate-500 mt-3 bg-white border border-slate-100 rounded-xl p-3">Debug
+                            using Chrome DevTools, check for overlapping elements and optimize assets.</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-500">Deadline</p>
+                                <p class="text-sm font-semibold text-slate-700">21 March 2025</p>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold" id="card3"
+                                value="Optimize  Home page">Completed</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Bottom Cards Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Task Card 4 -->
+                    <article class="glass rounded-2xl border border-slate-100  p-5 pill-bg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-base text-slate-700 px-4 py-2 rounded-lg bg-white">Meta</span>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Add new emoji ✌️</h3>
+                        <p class="text-sm text-slate-500 mt-3 bg-white border border-slate-100 rounded-xl p-3">Debug
+                            using Chrome DevTools, check for overlapping elements and character rendering issues.</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-500">Deadline</p>
+                                <p class="text-sm font-semibold text-slate-700">21 March 2025</p>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold" id="card4"
+                                value="Add new emoji ✌️">Completed</button>
+                        </div>
+                    </article>
+
+                    <!-- Task Card 5 -->
+                    <article class="glass rounded-2xl border border-slate-100 p-5 pill-bg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-base text-slate-700 px-4 py-2 rounded-lg bg-white">Google LLC</span>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Integrate OpenAI API</h3>
+                        <p class="text-sm text-slate-500 mt-3 bg-white border border-slate-100 rounded-xl p-3">Debug
+                            using Chrome DevTools, check for overlapping elements and API key security.</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-500">Deadline</p>
+                                <p class="text-sm font-semibold text-slate-700">21 March 2025</p>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold" id="card5"
+                                value="Improve Job searching">Completed</button>
+
+                        </div>
+                    </article>
+
+                    <!-- Task Card 6 -->
+                    <article class="glass rounded-2xl border border-slate-100  p-5 pill-bg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-base text-slate-700 px-4 py-2 rounded-lg bg-white">Glassdoor</span>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Improve Job searching</h3>
+                        <p class="text-sm text-slate-500 mt-3 bg-white border border-slate-100 rounded-xl p-3">Debug
+                            using Chrome DevTools, check for overlapping elements and UX issues.</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-500">Deadline</p>
+                                <p class="text-sm font-semibold text-slate-700">21 March 2025</p>
+                            </div>
+                            <button class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold" id="card6"
+                                value="Improve Job searching">Completed</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="lg:col-span-3">
+                <div class="glass rounded-2xl border border-slate-100 p-5 lg:sticky lg:top-6 h-full bg-white">
+                    <div class="flex items-center flex-col  mb-4">
+                        <div class="flex items-center justify-center gap-2 mb-4">
+                            <img src="./assets/activity.png" alt="">
+                            <h4 class="font-semibold text-slate-900">Activity Log</h4>
+                        </div>
+                        <button class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-semibold"
+                            id="clear">Clear History</button>
+                    </div>
+
+                    <div class="space-y-7 mt-9 overflow-y-auto" id="activity">
+
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
